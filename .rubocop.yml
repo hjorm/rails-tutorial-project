@@ -2,9 +2,13 @@ require:
   - rubocop-rails
   - rubocop-rspec
 
+Documentation:
+  Enabled: false
+
 AllCops:
   NewCops: enable
   Exclude:
+    - 'node_modules/**/*'
     - 'vendor/**/*'
     - 'spec/fixtures/**/*'
     - 'tmp/**/*'
