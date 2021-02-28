@@ -1,0 +1,6 @@
+pre-push:
+  parallel: true
+  commands:    
+    rubocop:
+      tags: backend style
+      run: bundle exec rubocop  --force-exclusion {all_files}
