@@ -40,6 +40,7 @@ module Code
       generate.helper_specs false
       generate.request_specs false
       generate.controller_specs false
+      generate.orm :active_record, primary_key_type: :uuid # use uuid as default primary key
     end
   end
 end
