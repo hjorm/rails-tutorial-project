@@ -1,5 +1,7 @@
+# frozen_string_literal: true
+
 class AdCategoriesController < ApplicationController
-  before_action :set_ad_category, only: [:show, :edit, :update, :destroy]
+  before_action :set_ad_category, only: %i[show edit update destroy]
 
   # GET /ad_categories
   def index
@@ -7,8 +9,7 @@ class AdCategoriesController < ApplicationController
   end
 
   # GET /ad_categories/1
-  def show
-  end
+  def show; end
 
   # GET /ad_categories/new
   def new
@@ -16,8 +17,7 @@ class AdCategoriesController < ApplicationController
   end
 
   # GET /ad_categories/1/edit
-  def edit
-  end
+  def edit; end
 
   # POST /ad_categories
   def create
@@ -46,13 +46,14 @@ class AdCategoriesController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_ad_category
-      @ad_category = AdCategory.find(params[:id])
-    end
 
-    # Only allow a list of trusted parameters through.
-    def ad_category_params
-      params.require(:ad_category).permit(:name)
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_ad_category
+    @ad_category = AdCategory.find(params[:id])
+  end
+
+  # Only allow a list of trusted parameters through.
+  def ad_category_params
+    params.require(:ad_category).permit(:name)
+  end
 end
